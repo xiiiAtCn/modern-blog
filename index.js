@@ -1,9 +1,9 @@
 import Koa from 'koa'
-import static from 'koa-static'
+import staticFile from 'koa-static'
 
 const app = new Koa()
 
-app.use(static('./assets'))
+app.use(staticFile('./assets'))
 
 app.use(async ctx => {
     ctx.body = 'Welcome to modern blog'
