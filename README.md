@@ -6,6 +6,7 @@ This is a website based on nodejs and react. Its purpose is simple: Show your th
 * [react](https://github.com/facebook/react)
 * [koa](https://github.com/koajs/koa)
 * [next.js](https://github.com/zeit/next.js)
+* [webpack](https://github.com/webpack/webpack.git)
 * web assembly
 * webGL
 <!-- more to do  -->

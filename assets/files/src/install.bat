@@ -9,5 +9,7 @@ echo download next.js
 git clone https://github.com/zeit/next.js.git
 echo download vue
 git clone https://github.com/vuejs/vue.git
+echo download webpack
+git clone https://github.com/webpack/webpack.git
 echo download successfully
 @echo on
