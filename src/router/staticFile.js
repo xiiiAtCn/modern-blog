@@ -6,7 +6,7 @@ let staticFiles = new Router()
 staticFiles.get('/', async ctx => {
     debugger
     let data = fs.readdirSync(staticFileBasePath)
-    ctx.body = `<ul>
+    ctx.body = `<ul style='margin: 0 auto; max-width: 1000px;'>
         ${
             data.map(e => {
                 return `<li><a href='/source/${e}'>${e}</a></li>`
