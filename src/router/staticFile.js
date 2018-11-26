@@ -31,7 +31,6 @@ staticFiles.all('/*', async ctx => {
         </ul>`
     } else {
         const file = fs.readFileSync(filePath)
-        
         ctx.body = `<pre style='margin: 0 auto; max-width: 1000px;font-size: 16px; padding: 10px; border: solid 1px #666; white-space: pre-line;'>${file.toString()}</pre>`
     }
 })

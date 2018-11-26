@@ -7,7 +7,8 @@
   "author": "lungern <xiii.at.cn@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --inspect index.js --exec babel-node"
+    "dev": "nodemon --inspect index.js --exec babel-node --ignore assets/",
+    "start": "babel-node index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
