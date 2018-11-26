@@ -1,8 +1,11 @@
 import Router from 'koa-router'
 import path from 'path'
 import fs from 'fs'
+import MarkDownIt from 'markdown-it'
+
 const staticFileBasePath = path.resolve(__dirname, '../../assets/files')
 let staticFiles = new Router()
+const markdown = new MarkDownIt()
 staticFiles.get('/', async ctx => {
     debugger
     let data = fs.readdirSync(staticFileBasePath)
@@ -31,7 +34,12 @@ staticFiles.all('/*', async ctx => {
         </ul>`
     } else {
         const file = fs.readFileSync(filePath)
-        ctx.body = `<pre style='margin: 0 auto; max-width: 1000px;font-size: 16px; padding: 10px; border: solid 1px #666; white-space: pre-line;'>${file.toString()}</pre>`
+        const fileType = filePath.substr(filePath.lastIndexOf('.') + 1)
+        if (fileType === 'md') {
+            ctx.body = `<div style='margin: 0 auto; max-width: 1000px;font-size: 16px; padding: 10px; border: solid 1px #666; white-space: pre-line;'>${ markdown.render(file.toString()) }</div>`
+        } else {
+            ctx.body = `<pre style='margin: 0 auto; max-width: 1000px;font-size: 16px; padding: 10px; border: solid 1px #666; white-space: pre-line;'>${file.toString()}</pre>`
+        }
     }
 })
 
